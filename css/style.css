@@ -1,0 +1,214 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Asegura que el body ocupe toda la pantalla */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+/* Encabezado personalizado */
+#header {
+  background-color: rgb(42, 42, 151);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  height: 50px;
+  margin-right: 20px;
+}
+
+#navBar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navBar-ul {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.navBar-ul:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Estilos principales */
+main {
+  flex: 1; /* Ocupa el espacio disponible entre el encabezado y el pie de página */
+  padding: 20px;
+}
+
+main .bg-info {
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.services .card-img-top {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Estilo para tarjetas y botones */
+.card {
+  border: none;
+  border-radius: 10px;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: #007acc;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #005b99;
+}
+
+/* Sección "Sobre Nosotros" */
+.about {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.contact-intro {
+  text-align: center;
+  padding: 2rem;
+  background-color: #007acc;
+  color: white;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+}
+
+.contact-details, .contact-form {
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details h2, .contact-form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+.contact-details p, .contact-form label {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-form button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007acc;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #005b99;
+}
+
+/* Pie de página */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto; /* Posiciona el footer al final de la pantalla */
+}
+
+footer .social-media a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer .social-media a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+  /* Header */
+  #header {
+    flex-direction: column;
+    text-align: center;
+  }
+  #navBar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-logo {
+    height: 40px;
+    margin: 10px 0;
+  }
+  .navBar-ul {
+    font-size: 1rem;
+  }
+  /* Servicios */
+  .services .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .services .col-md-4 {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  /* Ajustes generales */
+  main {
+    padding: 10px;
+  }
+  .btn-primary {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  /* Ajuste del texto en el pie de página */
+  footer p {
+    font-size: 0.9rem;
+  }
+}/*# sourceMappingURL=style.css.map */
