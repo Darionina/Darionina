@@ -61,7 +61,7 @@ main .bg-info {
 .services .card-img-top {
   height: 200px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 /* Estilo para tarjetas y botones */
