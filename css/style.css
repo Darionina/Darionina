@@ -15,23 +15,63 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Animación de entrada (deslizar hacia abajo) */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%); /* Empieza fuera de la pantalla hacia arriba */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); /* Vuelve a la posición original */
+    opacity: 1;
+  }
+}
+/* Animación de pulso en el logo */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1); /* Tamaño original */
+  }
+  50% {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+  }
+}
+/* Animación de deslizamiento de los enlaces */
+@keyframes slideIn {
+  from {
+    transform: translateY(-5px); /* Empieza ligeramente desplazado */
+  }
+  to {
+    transform: translateY(0); /* Vuelve a la posición original */
+  }
+}
+/* Estilo del encabezado */
 #header {
   background-color: rgb(42, 42, 151);
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  animation: slideDown 0.5s ease-out; /* Agrega la animación al header */
 }
 
+/* Estilo del logo */
 .nav-logo {
   height: 50px;
   margin-right: 20px;
+  transition: transform 0.3s ease;
 }
 
+.nav-logo:hover {
+  animation: pulse 0.5s ease; /* Aplica la animación de pulso al logo */
+}
+
+/* Estilo del navbar (enlaces) */
 #navBar ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
+  list-style: none; /* Elimina los puntos de la lista */
+  display: flex; /* Asegura que los elementos estén en línea (horizontal) */
+  gap: 20px; /* Espacio entre los elementos */
+  margin: 0; /* Elimina el margen */
+  padding: 0; /* Elimina el padding */
 }
 
 .navBar-ul {
@@ -39,11 +79,15 @@ body {
   text-decoration: none;
   font-size: 1.2rem;
   transition: background-color 0.3s;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: block; /* Asegura que los enlaces sean bloques dentro del contenedor */
 }
 
 .navBar-ul:hover {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
+  animation: slideIn 0.2s ease-out; /* Animación para los enlaces al hacer hover */
 }
 
 /* Estilos principales */
@@ -63,25 +107,55 @@ main .bg-info {
      object-fit: cover;
 }
 
-/* Estilo para tarjetas y botones */
+/* Estilo para tarjetas */
 .card {
   border: none;
   border-radius: 10px;
-  transition: box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición de sombra y transformación */
+  opacity: 0; /* Comienza invisible */
+  transform: translateY(30px); /* Empieza desplazada hacia abajo */
+  animation: fadeUp 1s forwards; /* Aplica la animación */
 }
 
 .card:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Aumenta el tamaño ligeramente */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
+/* Efecto al hacer clic en la tarjeta (presionado) */
+.card:active {
+  transform: scale(1); /* Vuelve al tamaño original al hacer clic */
+}
+
+/* Animación para las tarjetas */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Empieza desplazada */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Vuelve a la posición original */
+  }
+}
+/* Estilos de los botones */
 .btn-primary {
   background-color: #007acc;
   border: none;
-  transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-primary:hover {
   background-color: #005b99;
+  transform: translateY(-3px); /* Mueve el botón hacia arriba al pasar el cursor */
+}
+
+.btn-primary:active {
+  background-color: #00477a;
+  transform: translateY(1px); /* Vuelve a la posición original al hacer clic */
 }
 
 .about {
