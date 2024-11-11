@@ -15,7 +15,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Encabezado personalizado */
 #header {
   background-color: rgb(42, 42, 151);
   padding: 10px 20px;
@@ -61,7 +60,7 @@ main .bg-info {
 .services .card-img-top {
   height: 200px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 /* Estilo para tarjetas y botones */
@@ -85,7 +84,6 @@ main .bg-info {
   background-color: #005b99;
 }
 
-/* Sección "Sobre Nosotros" */
 .about {
   background-color: #f8f9fa;
   padding: 2rem;
@@ -169,7 +167,6 @@ footer .social-media a:hover {
   text-decoration: underline;
 }
 
-/* Estilos Responsivos */
 @media (max-width: 768px) {
   /* Header */
   #header {

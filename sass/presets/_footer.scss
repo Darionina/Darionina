@@ -1,0 +1,18 @@
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto; /* Posiciona el footer al final de la pantalla */
+}
+
+footer .social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer .social-media a:hover {
+    text-decoration: underline;
+}

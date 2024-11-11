@@ -1,0 +1,50 @@
+@media (max-width: 768px) {
+    /* Header */
+    #header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #navBar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-logo {
+        height: 40px;
+        margin: 10px 0;
+    }
+
+    .navBar-ul {
+        font-size: 1rem;
+    }
+
+    /* Servicios */
+    .services .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services .col-md-4 {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes generales */
+    main {
+        padding: 10px;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    /* Ajuste del texto en el pie de página */
+    footer p {
+        font-size: 0.9rem;
+    }
+}
