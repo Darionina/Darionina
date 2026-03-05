@@ -6,9 +6,10 @@ const flowerColors = [
   { ext: '#e0aaff', int: '#c77dff' }  
 ];
 let isFullScreen = false;
+let hasStarted = false; // NUEVA VARIABLE: Nos ayuda a saber si ya presionó el botón
 
 /* 1. TEXTO LETRA POR LETRA (Arranca automáticamente) */
-const message = 'Hola Jennifer ';
+const message = 'Hola Jennifer ✨';
 const textEl = document.getElementById('text');
 [...message].forEach((char, i) => {
   const span = document.createElement('span');
@@ -57,9 +58,11 @@ setInterval(spawnFlower, 300);
 
 /* 3. EVENTO DEL BOTÓN (Música baja y cambio de pantalla) */
 document.getElementById('start-btn').addEventListener('click', () => {
+  hasStarted = true; // Confirmamos que la experiencia ya empezó
+
   // Reproducir la música a volumen MUY bajo (15%)
   const bgMusic = document.getElementById('bg-music');
-  bgMusic.volume = 0.04; 
+  bgMusic.volume = 0.07; 
   bgMusic.play();
 
   // Ocultar la pantalla inicial
@@ -70,4 +73,18 @@ document.getElementById('start-btn').addEventListener('click', () => {
     document.getElementById('letter-screen').classList.add('active');
     isFullScreen = true; // Las flores empiezan a esparcirse
   }, 2000);
+});
+
+/* 4. CONTROL DE PESTAÑA (Pausar y reanudar música) */
+document.addEventListener("visibilitychange", () => {
+  const bgMusic = document.getElementById('bg-music');
+  
+  // Solo aplicamos esto si ella ya le dio clic al botón inicial
+  if (hasStarted) {
+    if (document.hidden) {
+      bgMusic.pause(); // Se pausa si cambia de pestaña o minimiza
+    } else {
+      bgMusic.play();  // Vuelve a sonar cuando regresa a la carta
+    }
+  }
 });
