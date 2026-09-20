@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Para ti, Belén</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Lluvia de flores decorativas en el fondo (Pantallas claras) -->
+    <div id="decorative-bg"></div>
+
+
+
+
+    <audio id="bg-music" loop>
+        <source src="oño.mpeg" type="audio/mpeg">
+    </audio>
+
+    <!-- Lluvia de flores decorativas en el fondo (Pantallas claras) -->
+    <div id="decorative-bg"></div>
+
+    <!-- Pantalla 1: Inicio -->
+    <section id="screen-1" class="screen active">
+        <div class="card">
+            <div class="top-icon">🌻</div>
+            <h1 class="title-cursive">Para ti, Belén</h1>
+            <p class="poetic-text">
+                Dicen que regalar flores amarillas este 21 de septiembre es una promesa de que siempre estaremos juntos en los momentos de mayor luz y alegría.
+            </p>
+            <p class="poetic-text italic-text">
+                "Aquí tienes las tuyas, para que nunca falte la primavera en tu sonrisa."
+            </p>
+            <button id="btn-hug" class="btn-primary">Toca aquí para ver algo más ✨</button>
+        </div>
+    </section>
+
+    <!-- Pantalla 2: Ramo oscuro + Tarjetitas Flotantes -->
+    <section id="screen-2" class="screen hidden dark-theme">
+        <div id="starry-bg"></div>
+        <div id="dark-flowers-bg"></div>
+        
+        <div class="bouquet-wrapper">
+            
+            <!-- TARJETAS FLOTANTES (Glassmorphism) -->
+            <div id="floating-cards-container">
+                <div class="glass-card-mini card-1">
+                    "Dicen que cuando realmente amas a alguien, incluso si hay un millón de razones para no continuar, todavía buscas una razón para quedarte."
+                </div>
+                <div class="glass-card-mini card-2">
+                    "Me seguiré enamorando de ti todos los días, porque al mirarte confirmo que eres todo lo que quiero en mi vida."
+                </div>
+                <div class="glass-card-mini card-3">
+                    "Si un día tienes ganas de llorar, llámame y callamos... Pero si un día me llamas y no contesto, ven corriendo hacia mí porque sin duda te necesitaré."
+                </div>
+            </div>
+            
+            <div id="bouquet-svg-container"></div>
+            
+            <!-- Pregunta final (inicia oculta) -->
+            <h2 id="question-title" class="title-cursive text-glow">¿Te gustó el detalle?</h2>
+
+            <div class="buttons-container hidden" id="action-buttons">
+                <button id="btn-yes" class="btn-success">Sí</button>
+                <button id="btn-no" class="btn-danger">No</button>
+            </div>
+        </div>
+    </section>
+
+<!-- Pantalla 3: Transición -->
+    <section id="screen-3" class="screen hidden">
+        <div class="card">
+            <p id="transition-text" class="poetic-text">
+                Te escribo esto desde el fondo de mi corazón, porque hay sentimientos que ya no me caben en el pecho y hoy más que nunca necesitaba que lo supieras...
+            </p>
+        </div>
+    </section>
+
+    <!-- Pantalla 4: La Carta Final -->
+    <section id="screen-4" class="screen hidden">
+        <div class="letter-container">
+            <div class="top-icon">🌻</div>
+            <h2 class="title-cursive letter-title">Mi Carta para ti</h2>
+            <div id="final-letter-content" class="poetic-text" style="text-align: left;">
+                <!-- Aquí pegarás el contenido de tu carta final -->
+                <p>
+    Mi amada Belén,
+</p>
+<p>
+    Te escribo esto porque desde que nos peleamos anoche, siento que el mundo se me ha venido abajo. Hoy el día se me ha hecho eterno, las horas simplemente no avanzan y no ha habido un solo segundo en el que no estés metida en mi cabeza. Te extraño de una forma que llega a doler físicamente.
+</p>
+<p>
+    Te confieso que he estado pendiente de ti todo el día. He estado como loco mirando el celular, buscando cualquier excusa para saber de ti, aunque sea en silencio. Se me hace un nudo en la garganta y se me oprime el pecho al no poder hablarte como siempre, o al ver ese "visto" que me deja con una sensación de vacío horrible. Se siente demasiado raro, demasiado frío no tenerte aquí conmigo.
+</p>
+<p>
+    Sé que estás molesta y sé que, ahora mismo, la confianza entre nosotros pueda estar frágil. Pero necesito que me escuches con el corazón: yo te amo. Te amo con una locura y una fuerza que a veces ni yo mismo sé cómo explicar. Eres la mujer de mi vida, y aunque a veces cometa errores o las cosas se pongan difíciles, mi amor por ti es lo más real que tengo.
+</p>
+<p>
+    Estoy dispuesto a hacer absolutamente lo que sea necesario para arreglar esto. Haré lo que me pidas, moveré cielo y tierra con tal de volver a verte sonreír a mi lado, pero por favor, no te alejes. No quiero dejarte, no soporto la idea de que me dejes y me aterra desde lo más profundo de mi alma que algún día puedas llegar a olvidarme. 
+</p>
+<p>
+    Eres mi refugio, mi luz y todo lo que quiero en esta vida. Por favor, no sueltes mi mano, porque yo te juro que no pienso soltar la tuya jamás.
+</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

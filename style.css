@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fffde7; 
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#decorative-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.dec-flower {
+    position: absolute;
+    animation: fallDown linear infinite;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.05));
+}
+
+@keyframes fallDown {
+    0% { transform: translateY(-15vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+.screen {
+    position: absolute;
+    z-index: 10;
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center; align-items: center;
+    transition: opacity 0.8s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    padding: 20px; 
+}
+
+.screen.active {
+    opacity: 1; pointer-events: auto;
+}
+
+.hidden { display: none !important; }
+
+/* --- DISEÑO DE PANTALLA OSCURA --- */
+.dark-theme {
+    background-color: #0a0a0a !important;
+}
+
+/* Tarjetitas Flotantes de Cristal */
+.glass-card-mini {
+    position: absolute;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.1); /* Fondo semi transparente */
+    backdrop-filter: blur(12px); /* Efecto cristal */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    padding: clamp(15px, 4vw, 25px);
+    color: #fff;
+    font-family: 'Lora', serif;
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    line-height: 1.6;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    width: 90%;
+    max-width: 450px;
+    z-index: 25;
+    opacity: 0; /* Inician ocultas */
+    transform: translate(-50%, 30px) scale(0.95);
+    transition: opacity 1s ease, transform 1s ease;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    pointer-events: none; 
+}
+
+/* Clase para mostrar la tarjeta con animación */
+.show-card {
+    opacity: 1 !important;
+    transform: translate(-50%, 0) scale(1) !important;
+}
+
+/* Posiciones dinámicas en pantalla */
+.card-1 { top: 15%; }
+.card-2 { top: 35%; }
+.card-3 { top: 55%; }
+
+#question-title {
+    opacity: 0; 
+    transition: opacity 1s ease;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    z-index: 30;
+    position: relative;
+}
+
+.text-glow {
+    color: #ffeb3b !important;
+    text-shadow: 0 0 15px rgba(255, 235, 59, 0.8), 0 0 30px rgba(255, 235, 59, 0.5) !important;
+    font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
+}
+
+.bouquet-wrapper {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+#bouquet-svg-container {
+    width: 300px;
+    height: 380px;
+    position: relative;
+    margin-bottom: 20px;
+    animation: dropBouquet 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    transform: translateY(100vh);
+}
+
+@keyframes dropBouquet {
+    to { transform: translateY(0); }
+}
+
+#starry-bg, #dark-flowers-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#dark-flowers-bg { z-index: 2; }
+
+.star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkle infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.5); box-shadow: 0 0 10px #FFD54F; }
+}
+
+/* --- TARJETAS CLARAS ORIGINALES --- */
+.card {
+    background: #fffdf8;
+    padding: clamp(20px, 5vw, 40px) clamp(20px, 5vw, 50px);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+    text-align: center;
+    width: 100%;
+    max-width: 550px;
+}
+
+.top-icon { font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 10px; }
+
+.title-cursive {
+    font-family: 'Dancing Script', cursive;
+    color: #c98a02;
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.letter-title { font-size: clamp(2.5rem, 7vw, 3rem); }
+
+.poetic-text {
+    font-family: 'Lora', serif;
+    font-size: clamp(1rem, 3vw, 1.15rem);
+    line-height: 1.7;
+    color: #4a4a4a;
+    margin-bottom: 25px;
+}
+
+.italic-text { font-style: italic; color: #c98a02; font-weight: bold; }
+
+/* --- BOTONES Y CONTENEDOR RESPONSIVO --- */
+button {
+    padding: clamp(10px, 3vw, 15px) clamp(20px, 4vw, 35px);
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-family: 'Lora', serif;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease; 
+    white-space: normal; 
+}
+
+.btn-primary {
+    background-color: #f39c12; 
+    color: white;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+    width: 100%; 
+}
+.btn-primary:hover { background-color: #e67e22; }
+
+#action-buttons {
+    opacity: 0; 
+    transition: opacity 1s ease;
+}
+
+.buttons-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center;
+    gap: 15px;
+    position: relative; 
+    width: 100%;
+    min-height: 60px;
+    z-index: 50; 
+}
+
+.btn-success { 
+    background-color: #4caf50; 
+    color: white; 
+    width: clamp(100px, 30vw, 150px);
+    transform-origin: center center; 
+}
+.btn-danger { 
+    background-color: #f44336; 
+    color: white; 
+    width: clamp(100px, 30vw, 150px); 
+}
+
+.letter-container {
+    background: #fffdf8;
+    width: 100%; max-width: 800px; height: 85vh;
+    padding: clamp(20px, 5vw, 50px); border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    overflow-y: auto; text-align: center;
+}
